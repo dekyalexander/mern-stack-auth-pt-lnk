@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+// Pemanggilan component dari directory local
+import Header from "../pages/components/Header";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -28,18 +30,14 @@ const Home = () => {
     };
     verifyCookie();
   }, [cookies, navigate, removeCookie]);
-  const Logout = () => {
-    removeCookie("token");
-    navigate("/login");
-  };
   return (
     <>
+     <Header/>
       <div className="home_page">
         <h4>
           {" "}
           Welcome <span>{username}</span>
         </h4>
-        <button onClick={Logout}>LOGOUT</button>
       </div>
       <ToastContainer />
     </>
