@@ -12,12 +12,9 @@ mongoose
   .then(() => console.log("MongoDB is  connected successfully"))
   .catch((err) => console.error(err));
 
-app.options('*', cors()) // include before other routes
-
 app.use(
   cors({
-    AccessControlAllowOrigin: '*', 
-    origin: ["http://localhost:4000"],
+    origin: ["http://localhost:3000"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
