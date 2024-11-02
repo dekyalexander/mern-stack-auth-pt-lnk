@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+// Pemanggilan assets image dari directory local
+import logo from '../assets/image/login.jpeg';
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -59,7 +61,19 @@ const Signup = () => {
   };
 
   return (
-    <div className="form_container">
+    <div className="form_container_signup">
+      <center>
+       <img 
+          src={logo} 
+          alt="auth" 
+          style={{
+            width: '100px',
+            height: '100px',
+            borderRadius: '50%',
+            marginBottom: '5px'
+          }} 
+        />
+        </center>
       <h2>Signup Account</h2>
       <form onSubmit={handleSubmit}>
         <div>
@@ -68,7 +82,7 @@ const Signup = () => {
             type="email"
             name="email"
             value={email}
-            placeholder="Enter your email"
+            placeholder="Masukkan email"
             onChange={handleOnChange}
           />
         </div>
@@ -78,7 +92,7 @@ const Signup = () => {
             type="text"
             name="username"
             value={username}
-            placeholder="Enter your username"
+            placeholder="Masukkan username"
             onChange={handleOnChange}
           />
         </div>
@@ -88,13 +102,13 @@ const Signup = () => {
             type="password"
             name="password"
             value={password}
-            placeholder="Enter your password"
+            placeholder="Masukkan password"
             onChange={handleOnChange}
           />
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit">Daftar</button>
         <span>
-          Already have an account? <Link to={"/login"}>Login</Link>
+          Sudah memiliki akun? <Link to={"/login"}>Login</Link>
         </span>
       </form>
       <ToastContainer />
