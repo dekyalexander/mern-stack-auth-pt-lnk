@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+// Pemanggilan assets image dari directory local
+import logo from '../assets/image/login.jpeg';
+
 
 const Login = () => {
   const navigate = useNavigate();
@@ -58,8 +61,21 @@ const Login = () => {
   };
 
   return (
-    <div className="form_container">
+    <div className="form_container_login">
+      <center>
+       <img 
+          src={logo} 
+          alt="auth" 
+          style={{
+            width: '100px',
+            height: '100px',
+            borderRadius: '50%',
+            marginBottom: '5px'
+          }} 
+        />
+        </center>
       <h2>Login Account</h2>
+      
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="email">Email</label>
@@ -67,7 +83,7 @@ const Login = () => {
             type="email"
             name="email"
             value={email}
-            placeholder="Enter your email"
+            placeholder="Masukkan email"
             onChange={handleOnChange}
           />
         </div>
@@ -77,13 +93,13 @@ const Login = () => {
             type="password"
             name="password"
             value={password}
-            placeholder="Enter your password"
+            placeholder="Masukkan password"
             onChange={handleOnChange}
           />
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit">Masuk</button>
         <span>
-          Already have an account? <Link to={"/signup"}>Signup</Link>
+          Belum memiliki akun? <Link to={"/signup"}>Signup</Link>
         </span>
       </form>
       <ToastContainer />
