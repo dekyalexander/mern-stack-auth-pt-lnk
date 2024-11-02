@@ -9,15 +9,19 @@ module.exports.Signup = async (req, res, next) => {
     if (existingUser) {
       return res.json({ message: "User already exists" });
     }
+    if(!email || !username ||!password){
+      return res.json({message:'All fields are required'})
+    }
     const user = await User.create({ email, password, username, createdAt });
     const token = createSecretToken(user._id);
     res.cookie("token", token, {
       withCredentials: true,
       httpOnly: false,
     });
-    res
-      .status(201)
-      .json({ message: "User signed in successfully", success: true, user });
+   
+   res
+    .status(201)
+    .json({ message: "User signed in successfully", success: true, user });
     next();
   } catch (error) {
     console.error(error);
