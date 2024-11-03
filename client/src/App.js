@@ -4,6 +4,9 @@
 import { Route, Routes } from "react-router-dom";
 import { Login, Signup } from "./pages";
 import Home from "./pages/Home";
+import EmailList from "./pages/EmailList";
+import AddEmail from "./pages/AddEmail";
+import EditEmail from "./pages/EditEmail";
 
 function App() {
   return (
@@ -27,6 +30,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/email" element={<EmailList />} />
+        <Route path="/add" element={<AddEmail />} />
+        <Route path="/edit/:id" element={<EditEmail />} />
       </Routes>
       
     </div>

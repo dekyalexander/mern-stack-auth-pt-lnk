@@ -14,9 +14,7 @@ function Header() {
     <nav style={styles.navbar}>
       <ul style={styles.navList}>
         <li style={styles.navItem}><a href="#" style={styles.navLink}>Home</a></li>
-        <li style={styles.navItem}><a href="#" style={styles.navLink}>About</a></li>
-        <li style={styles.navItem}><a href="#" style={styles.navLink}>Services</a></li>
-        <li style={styles.navItem}><a href="#" style={styles.navLink}>Contact</a></li>
+        <li style={styles.navItem}><a href="/email" style={styles.navLink}>Email</a></li>
         <li style={styles.navItem}><a href="#" onClick={Logout} style={styles.navLink}>Logout</a></li>
       </ul>
     </nav>
